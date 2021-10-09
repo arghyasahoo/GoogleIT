@@ -14,7 +14,20 @@ def select_all(event):
 
 root = tk.Tk()
 root.title('GoogleIT')
-root.geometry('500x20')
+root.geometry()
+root.resizable(False, False)
+
+window_height = 20
+window_width = 500
+
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
+
+x_cordinate = int((screen_width/2) - (window_width/2))
+y_cordinate = int((screen_height/2) - (window_height/2))
+
+root.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
+
 
 search=tk.StringVar()
 e = tk.Entry(root, textvariable=search, width=495)
